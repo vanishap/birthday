@@ -36,7 +36,7 @@
     transform: rotate(360deg);
   }
 }
-div {
+body {
   background: pink;
 
 }
@@ -48,4 +48,17 @@ div {
   border-radius: 50%;
   box-shadow: 0 5px 15px rgb(0 0 0 / 10%);
   box-shadow: var(--light-shadow);
+}
+.container{
+  width:80%;
+  margin: 0 auto;
+}
+.people-container{
+  display: flex;
+  
+}
+.people-container section{
+padding: 15px;
+border: 1px solid gray;
+margin: 2px;;
 }

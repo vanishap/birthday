@@ -20,13 +20,15 @@ e.target.innerHTML = e.target.innerHTML+'*'
 const length = users.length;
 
   return ( <>
+  <div className="container">
+  <h1>This Vanisha's app</h1>
     <h3>{length} birthdays today</h3>
-    <h2 onClick={()=>setUserName('Vanisha')}>{userName}</h2>
+    <div className='people-container'>
     { users.map((user) => { 
     const {name, age, img} = user;
     return ( 
       <main>
-        <section> 
+        <section style={{"display":"flex"}}> 
           <article className='person'>
             <img src={img}></img>
             <div>
@@ -38,7 +40,9 @@ const length = users.length;
       </main>
     )
   })}
+  </div>
       <button className='btn' onClick={() =>clickHandler(users)}>Clear Items</button>  
+      </div>
   </>
   );   
 }
