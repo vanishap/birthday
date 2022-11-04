@@ -8,6 +8,8 @@ function App() {
   const [age, setAge] = useState();
   const [img, setImg] = useState();
   const [users, setUsers] = useState(data);
+  const [usersLocal, setUsersLocal] = useState(data);
+
   const clickHandler =(users)=>{
   setUsers([]);
 }
