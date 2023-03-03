@@ -4,25 +4,24 @@ import { useState } from 'react';
 import data from './data';
 
 function App() {   
-  const [userName, setUserName] = useState('Madhan');
-  const [age, setAge] = useState();
-  const [img, setImg] = useState();
   const [users, setUsers] = useState(data);
-  const [usersLocal, setUsersLocal] = useState(data);
 
   const clickHandler =(users)=>{
   setUsers([]);
-}
+  }
 const nameHandler = (e)=>{
-e.target.innerHTML = e.target.innerHTML+'*'
-  
+e.target.innerHTML = e.target.innerHTML+'*';  
 }
-const length = users.length;
+
+const deleteHandler =(e, selectedUser)=>{
+  const filteredUsers= users.filter(user=> selectedUser.id !== user.id);
+  setUsers(filteredUsers);
+}
 
   return ( <>
   <div className="container">
-  <h1>This Vanisha's app</h1>
-    <h3>{length} birthdays today</h3>
+  <h1>Birthday Reminder</h1>
+    <h3>{users.length} birthdays today</h3>
     <div className='people-container'>
     { users.map((user) => { 
     const {name, age, img} = user;
@@ -34,6 +33,7 @@ const length = users.length;
             <div>
               <h4 value={name}  className= 'name'onClick={(e)=>nameHandler(e)}>{name}</h4>
               <p>{age} years</p>
+              <button className='btn' onClick={(e)=>deleteHandler(e,user)}>Delete</button>
             </div>
           </article>
         </section>
